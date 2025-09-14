@@ -1,0 +1,239 @@
+/* CSS reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* variables */
+:root {
+  /* primary-colors */
+  --primary-Brown-800: hsl(14, 45%, 36%);
+  --primary-Rose-800: hsl(332, 51%, 32%);
+  --primary-50: hsl(330, 100%, 98%);
+
+  /* neutral-colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-100: hsl(320, 75%, 98%);
+  --neutral-150: hsl(30, 18%, 87%);
+  --neutral-600: hsl(30, 10%, 34%);
+  --neutral-900: hsl(24, 5%, 18%);
+
+  /* font stuff */
+  --ff-base: "Outfit", sans-serif;
+  --ff-alt: "Young Serif", serif;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+/* base styling */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  color: var(--neutral-600);
+}
+
+section {
+  margin: 1.5rem;
+}
+hr{
+    width: 90%;
+    height: 1px;
+    margin: auto;
+    border: none;
+    border: 1px solid var(--neutral-150);
+}
+h2 {
+  font-family: var(--ff-alt);
+  color: var(--primary-Brown-800);
+  font-weight: var(--fw-regular);
+}
+span {
+  font-weight: var(--fw-bold);
+  margin-left: 0.5em;
+}
+ol,
+ul {
+  padding: 0.5em 1em;
+}
+
+ol li,
+ul li {
+  margin: 0.8em 0.5em;
+}
+ol li::marker {
+  font-weight: var(--fw-bold);
+  color: var(--primary-Brown-800);
+}
+
+/* layout styling */
+.page-wrapper {
+  max-width: 576px;
+  background-color: var(--neutral-0);
+}
+
+/* component styling */
+
+/* header starts from here */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.header-content {
+  margin: 0 1.5rem;
+}
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  text-wrap: balance;
+  font-family: var(--ff-alt);
+  font-weight: var(--fw-regular);
+  color: var(--neutral-900);
+  line-height: 1.1;
+}
+.preparation-section {
+  margin: 0 1.5rem;
+  padding: 0.5em 1em;
+  background-color: var(--neutral-100);
+  border-radius: 0.5em;
+}
+.preparation-section h2 {
+  font-size: 1.2rem;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-semibold);
+  color: var(--primary-Rose-800);
+}
+
+.preparation-section li::marker {
+  color: var(--primary-Rose-800);
+}
+
+/* main starts from here */
+
+.nutrition-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+table {
+  border-collapse: collapse;
+}
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--neutral-150);
+}
+
+th,
+td {
+  padding: 0.8em;
+}
+th {
+  color: var(--neutral-600);
+  font-weight: var(--fw-regular);
+}
+td {
+  color: var(--primary-Brown-800);
+  font-weight: var(--fw-bold);
+}
+
+/* footer starts from here */
+footer {
+  text-align: center;
+}
+.attribution a {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  background: #924e32;
+  background: linear-gradient(to right, #924e32 0%, #5f574e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* media query */
+@media (min-width: 576px) {
+  body {
+    background-color: hsl(29, 53%, 90%);
+  }
+  .page-wrapper {
+    margin: 2rem ;
+    border-radius: 1em;
+  }
+  .recipe-img {
+    margin: 1.5rem;
+    border-radius: 0.5em;
+    overflow: hidden;
+  }
+ 
+}
+
+@media (min-width: 768px) {
+  .page-wrapper {
+    max-width: 600px;
+  }
+}
