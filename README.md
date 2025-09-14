@@ -31,7 +31,7 @@ Users should be able to:
 
 ## 🌐 Live Demo
 
-👉 [View Live Demo](https://hassan-ali-byte.github.io/recipe-page/)
+👉 [View Live Demo](https://hassan-ali-byte.github.io/recipe-page-main/)
 
 ---
 
